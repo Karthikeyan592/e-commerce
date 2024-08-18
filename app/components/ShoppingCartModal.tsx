@@ -25,7 +25,7 @@ export default function ShoppingCartModal() {
     handleCartClick,
     cartDetails,
     removeItem,
-    totalPrice,
+    totalPrice=0,
     redirectToCheckout,
     setItemQuantity,
   } = useShoppingCart();
@@ -46,11 +46,13 @@ export default function ShoppingCartModal() {
   };
 
   const applyDiscount = () => {
-    const validCodes = {
-        DISC10: 10,
-        DISC20: 20,
-        DISC5: 5,
-      };
+
+    const validCodes: { [key: string]: number } = {
+      DISC10: 10,
+      DISC20: 20,
+      DISC5: 5,
+    };
+    
   
       if (validCodes[discountCode]) {
         setDiscountPercentage(validCodes[discountCode]);
@@ -176,7 +178,7 @@ export default function ShoppingCartModal() {
             <div className="flex justify-between text-base font-medium text-gray-900 mt-4">
               <p>Total:</p>
               <p>
-                ${discountApplied ? (totalPrice * (100 - discountPercentage))/ 100 : totalPrice}
+                ${discountApplied ? (totalPrice*(100 - discountPercentage))/ 100 : totalPrice}
               </p>
             </div>
 
