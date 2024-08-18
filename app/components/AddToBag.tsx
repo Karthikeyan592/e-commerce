@@ -32,17 +32,16 @@ export default function AddToBag({
     price_id: price_id,
   };
   const handleAddToCart = () => {
-    // Check if the item already exists in the cart
-    const existingItem = cartDetails[product.price_id]; // Assuming price_id is unique for each product
+    const existingItem = cartDetails && typeof cartDetails[product.price_id] === 'object'
+    ? cartDetails[product.price_id]
+    : null; 
 
     if (existingItem) {
-      // If it exists, increase the quantity
       setItemQuantity(product.price_id, existingItem.quantity + 1);
     } else {
-      // If it's a new item, add it with a quantity of 1
       addItem(product);
     }
-    handleCartClick(); // Open the cart
+    handleCartClick(); 
   };
 
 
