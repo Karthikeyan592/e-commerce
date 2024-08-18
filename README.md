@@ -50,3 +50,6 @@ This is a responsive e-commerce platform built using **Next.js**, **Sanity.io**,
 - Payment Success and Error Page.
 
 ## Demo
+
+[Watch the video](https://drive.google.com/file/d/1Yqhn3MGv6uekrW1Rxcb2kwBn17I3Zy_T/view?usp=sharing)
+
