@@ -1,11 +1,10 @@
 "use client";
-
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ShoppingBag } from "lucide-react";
 import { useShoppingCart } from "use-shopping-cart";
-
 const links = [
   { name: "Home", href: "/" },
   { name: "Men", href: "/Men" },
@@ -19,7 +18,15 @@ export default function Navbar() {
   return (
     <header className="mb-8 border-b">
       <div className="flex items-center justify-between mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl">
-        <Link href="/">
+        <Link href="/" className="flex">
+        {/* <img src="/next.svg"/> */}
+        <Image
+                  src="/next.svg"
+                  alt=" image"
+                  // className="w-full h-full object-cover object-center lg:h-full lg:w-full"
+                  width={30}
+                  height={30}
+                />
           <h1 className="text-2xl md:text-4xl font-bold">
             Next<span className="text-primary">Fashion</span>
           </h1>
